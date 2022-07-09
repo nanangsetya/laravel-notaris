@@ -181,7 +181,7 @@ class PermohonanController extends Controller
                 $ktp_file_new[] = $filename;
             }
 
-            $keep_file = array_intersect(explode(",", $data->ktp), $r->old_file_ktp);
+            $keep_file = array_intersect(explode(",", $data->ktp), ($r->old_file_ktp ?? []));
             $deleted_file = array_diff(explode(",", $data->ktp), $r->ktp);
             foreach ($deleted_file as $d) {
                 if (Storage::exists('public/upload/', $d)) {
@@ -200,7 +200,7 @@ class PermohonanController extends Controller
                 $kk_file_new[] = $filename;
             }
 
-            $keep_file = array_intersect(explode(",", $data->kk), $r->old_file_kk);
+            $keep_file = array_intersect(explode(",", $data->kk), ($r->old_file_ktp ?? []));
             $deleted_file = array_diff(explode(",", $data->kk), $r->kk);
             foreach ($deleted_file as $d) {
                 if (Storage::exists('public/upload/', $d)) {
@@ -219,7 +219,7 @@ class PermohonanController extends Controller
                 $sertifikat_file_new[] = $filename;
             }
 
-            $keep_file = array_intersect(explode(",", $data->sertifikat), $r->old_file_sertifikat);
+            $keep_file = array_intersect(explode(",", $data->sertifikat), ($r->old_file_ktp ?? []));
             $deleted_file = array_diff(explode(",", $data->sertifikat), $r->sertifikat);
             foreach ($deleted_file as $d) {
                 if (Storage::exists('public/upload/', $d)) {
@@ -238,7 +238,7 @@ class PermohonanController extends Controller
                 $pbb_file_new[] = $filename;
             }
 
-            $keep_file = array_intersect(explode(",", $data->pbb), $r->old_file_pbb);
+            $keep_file = array_intersect(explode(",", $data->pbb), ($r->old_file_ktp ?? []));
             $deleted_file = array_diff(explode(",", $data->pbb), $r->pbb);
             foreach ($deleted_file as $d) {
                 if (Storage::exists('public/upload/', $d)) {
