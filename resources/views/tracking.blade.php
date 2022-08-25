@@ -28,14 +28,14 @@
                 </div>
                 <div class="block-content">
                     <div id="accordion" role="tablist" aria-multiselectable="true">
-                        <div class="block block-bordered block-rounded mb-2">
-                            @foreach($track as $t)
+                        @foreach($track as $t)
+                            <div class="block block-bordered block-rounded mb-2">
                                 <div class="block-header" role="tab" id="accordion_h{{ $t['id'] }}">
-                                    <a class="font-w600" data-toggle="collapse" data-parent="#accordion" href="#accordion_q1" aria-expanded="true" aria-controls="accordion_q1">
+                                    <a class="font-w600" data-toggle="collapse" data-parent="#accordion" href="#accordion_q{{ $t['id'] }}" aria-expanded="true" aria-controls="accordion_q{{ $t['id'] }}">
                                         {{ $t['nomor_sertifikat'].' ('. $t['jenis'].')' }} - {{ $t['pemohon'] }}
                                     </a>
                                 </div>
-                                <div id="accordion_q1" class="collapse" role="tabpanel" aria-labelledby="accordion_h{{ $t['id'] }}" data-parent="#accordion">
+                                <div id="accordion_q{{ $t['id'] }}" class="collapse" role="tabpanel" aria-labelledby="accordion_h{{ $t['id'] }}" data-parent="#accordion">
                                     @if(count($t['history']) > 0)
                                         <div class="block-content">
                                             <ul class="list list-timeline list-timeline-modern pull-t">
@@ -51,10 +51,14 @@
                                                 @endforeach
                                             </ul>
                                         </div>
+                                    @else
+                                        <div class="block-content">
+                                            <p>Riwayat belum tersedia</p>
+                                        </div>
                                     @endif
                                 </div>
-                            @endforeach
-                        </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
