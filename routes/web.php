@@ -45,6 +45,7 @@ Route::group(['prefix' => 'user', 'as' => 'user.', 'middleware' => 'check.role:1
 
 Route::group(['middleware' => 'check.role:2,3'], function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('tracking', [DashboardController::class, 'tracking'])->name('tracking');
 
     Route::group(['prefix' => 'pemohon', 'as' => 'pemohon.'], function () {
         Route::get('/', [PemohonController::class, 'index'])->name('index');

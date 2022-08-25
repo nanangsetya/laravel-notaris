@@ -22,4 +22,37 @@ class DashboardController extends Controller
 
         return view('dashboard', compact('data', 'tahun'));
     }
+
+    function tracking(Request $r)
+    {
+        $track = [];
+        if (isset($r->track) || $r->track != '') {
+            $search = Permohonan::with(['riwayat_permohonan' => function ($q) {
+                $q->orderBy('riwayat_permohonan.tanggal', 'desc');
+            }])->with('pemohon')->with('jenis_berkas')->where('nomor_sertifikat', $r->track)->get();
+            foreach ($search as $s) {
+                $history = [];
+                if ($s->riwayat_permohonan != null) {
+                    $i = 1;
+                    foreach ($s->riwayat_permohonan as $r) {
+                        $history[] = [
+                            'no' => $i++,
+                            'tanggal' => date('d-m-Y', strtotime($r->tanggal)),
+                            'keterangan' => $r->keterangan,
+                            'status_berkas' => $r->status_berkas->deskripsi
+                        ];
+                    }
+                }
+                $track[] = [
+                    'id' => $s->id,
+                    'pemohon' => $s->pemohon->nama,
+                    'nomor_sertifikat' => $s->nomor_sertifikat,
+                    'jenis' => $s->jenis_berkas->deskripsi,
+                    'history' => $history
+                ];
+            }
+        }
+
+        return view('tracking', compact('track'));
+    }
 }

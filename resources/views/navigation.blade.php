@@ -37,7 +37,6 @@
                 <!-- Logo -->
                 <div class="content-header-item">
                     <a class="link-effect font-w700" href="index.html">
-                        <i class="si si-fire text-primary"></i>
                         <span class="font-size-xl text-dual-primary-dark">NO</span><span class="font-size-xl text-primary">TARIS</span>
                     </a>
                 </div>
@@ -59,13 +58,13 @@
 
                 <!-- Visible only in normal mode -->
                 <div class="sidebar-mini-hidden-b text-center">
-                    <a class="img-link" href="be_pages_generic_profile.html">
-                        <img class="img-avatar" src="{{ asset('assets/media/avatars/avatar15.jpg') }}" alt="">
+                    <a class="img-link" href="#">
+                        <img class="img-avatar" src="{{ asset('assets/media/various/ini.png') }}" alt="" style="width:70px !important;height:70px !important;">
                     </a>
-                    <ul class="list-inline mt-10">
-                        <li class="list-inline-item">
-                            <a class="link-effect text-dual-primary-dark font-size-sm font-w600 text-uppercase" href="#">{{ Auth::user()->nama }}</a>
-                        </li>
+                    <ul class="list-inline mt-5">
+                       <li class="list-inline-item">
+                           <a class="link-effect text-dual-primary-dark font-size-sm font-w400 text-uppercase" href="#">Yudha Kusuma Putra, S.H, M.Kn</a>
+                       </li>
                     </ul>
                 </div>
                 <!-- END Visible only in normal mode -->
@@ -78,6 +77,9 @@
                     @if(in_array(Auth::user()->role_id, [2,3]))
                         <li>
                             <a href="{{ route('dashboard') }}"><i class="si si-home"></i><span class="sidebar-mini-hide">Dashboard</span></a>
+                        </li>
+                        <li>
+                            <a href="{{ route('tracking') }}"><i class="si si-magnifier"></i><span class="sidebar-mini-hide">Tracking</span></a>
                         </li>
                         <li>
                             <a href="{{ route('pemohon.index') }}"><i class="si si-users"></i><span class="sidebar-mini-hide">Pemohon</span></a>
