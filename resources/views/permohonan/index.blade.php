@@ -37,7 +37,7 @@
                 </div>
             @endif
             <div class="block-content block-content-full">
-                <table class="table table-hover datatable" id="table-permohonan">
+                <table class="table table-bordered table-hover datatable" id="table-permohonan">
                     <thead>
                         <tr>
                             <th>No</th>

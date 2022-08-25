@@ -37,9 +37,9 @@
                 <a class="block block-rounded block-bordered block-link-shadow" href="javascript:void(0)">
                     <div class="block-content block-content-full clearfix">
                         <div class="float-right mt-15 d-none d-sm-block">
-                            <i class="si si-check fa-2x text-elegance-light"></i>
+                            <i class="si si-check fa-2x text-primary-light"></i>
                         </div>
-                        <div class="font-size-h3 font-w600 text-elegance">{{ $data->selesai }}</div>
+                        <div class="font-size-h3 font-w600 text-primary">{{ $data->selesai }}</div>
                         <div class="font-size-sm font-w600 text-uppercase text-muted">Selesai</div>
                     </div>
                 </a>
@@ -48,9 +48,9 @@
                 <a class="block block-rounded block-bordered block-link-shadow" href="javascript:void(0)">
                     <div class="block-content block-content-full clearfix">
                         <div class="float-right mt-15 d-none d-sm-block">
-                            <i class="si si-wallet fa-2x text-earth-light"></i>
+                            <i class="si si-wallet fa-2x text-primary-light"></i>
                         </div>
-                        <div class="font-size-h3 font-w600 text-earth">{{ rupiah($data->pendapatan) }}</div>
+                        <div class="font-size-h3 font-w600 text-primary">{{ rupiah($data->pendapatan) }}</div>
                         <div class="font-size-sm font-w600 text-uppercase text-muted">Pendapatan</div>
                     </div>
                 </a>

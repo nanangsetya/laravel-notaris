@@ -15,7 +15,7 @@
                 <a href="{{ route('pemohon.create') }}" class="btn btn-sm btn-alt-success">Tambah</a>
             </div>
             <div class="block-content block-content-full">
-                <table class="datatable table" id="pemohon-table">
+                <table class="datatable table table-bordered table-hover" id="pemohon-table">
                     <thead>
                         <tr>
                             <th></th>

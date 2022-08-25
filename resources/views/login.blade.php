@@ -37,7 +37,7 @@
                             <form class="js-validation-signin" action="{{ route('login') }}" method="post">
                                 @csrf
                                 <div class="block block-themed block-rounded block-shadow">
-                                    <div class="block-header bg-gd-dusk">
+                                    <div class="block-header">
                                         <h3 class="block-title">Please Sign In</h3>
                                     </div>
                                     <div class="block-content">

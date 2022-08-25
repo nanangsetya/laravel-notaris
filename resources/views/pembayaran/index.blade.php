@@ -30,7 +30,7 @@
         </div>
         <div class="block">
             <div class="block-content block-content-full">
-                <table class="datatable table table-bordered" id="table-pembayaran">
+                <table class="datatable table table-bordered table-hover" id="table-pembayaran">
                     <thead>
                         <tr>
                             <th>No</th>
